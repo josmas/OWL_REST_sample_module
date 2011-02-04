@@ -1,0 +1,53 @@
+------------------------
+-- REST module sample --
+------------------------
+
+This is sample Open Wonderland module that displays a cell. On click it will register the
+user against an external webservice that follows a REST interface.
+
+----------------------------------------------
+Classpaths and expected structure for Netbeans
+----------------------------------------------
+
+This module will need little modifications if it is downloaded (or cloned) in a structure 
+that resembles the following 'my-own-wonderland-modules' directory.  Please note that for 
+module development, the sources of Open Wonderland have to be available locally.
+
+If you have your Wonderland sources in your user directory, the expected structure should
+look like:
+
+~/wonderland
+	| [loads of stuff here]
+
+~/wonderland-modules
+	|
+	--> stable
+	|	| [modules here]
+	|
+	--> unstable
+		| [modules here]
+
+~/my-own-wonderland-modules
+	|
+	--> unstable
+		|
+		--> rest-module-sample
+
+If you drop the module in that last directory (or a similar strucutre but with your own names)
+then all the classpaths should be ready to go. If not, follow the instructions in the tutorial
+to change your settings for Netbeans.
+
+Link to the tutorial: http://faithhold.dyndns.org:8080/JSPWiki/Wiki.jsp?page=Developing%20a%20New%20Cell
+
+-----------------------------------------
+Cleaning up git references after cloning
+-----------------------------------------
+If you have cloned this project, you will want to clean up the remote references to the original git project.
+To do so just delete the .git folder. You can also delete the .gitigore file if you are not going to be using git,
+and the file at src/classes/.only_here_for_git_delete_me which is only there cause git does not keep track of empty
+folders.
+
+After cleaning these files up, you can initialise your own git repo if you want to do so (git init).
+
+
+Jos (Feb 2011)
