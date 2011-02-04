@@ -1,0 +1,19 @@
+Tasks
+-----
+X Create new cell from the cell tutorial with a listener for mouse.
+Create a content menu to register instead of the mouse click.
+X Add REST calls (old code with GET and POST).
+Connect the click with a POST Action
+Refactor REST calls and try to separate them (a component?).
+Add UPDATE and DELETE support.
+
+Tests
+-----
+Mock the connection to the web server and skip integration tests.
+
+
+//Design: Group all the REST specific code in a separate class so that it can
+be testable out of the world.
+
+//Idea for the component: In the properties panel we can attach the strings to
+send or return, depending on the operation (GET, POST, UPDATE, DELETE).

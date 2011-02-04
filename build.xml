@@ -41,4 +41,43 @@
                                            
     <target name="deploy" depends="dist, -module-deploy"/>
     <target name="clean" depends="-module-clean"/>
+
+
+    <property name="test.lib" value="lib_test" />
+    <property name="test.classes" value="src/test" />
+    <property name="test.compiled.classes" value="build/test" />
+
+
+    <path id="test.classpath">
+        <pathelement location="${test.compiled.classes}" />
+        <pathelement location="${build.classes.dir}" />
+        <fileset dir="${test.lib}">
+            <include name="**/*.jar"/>
+        </fileset>
+        <fileset dir="${wonderland.dir}/core/build/lib">
+            <include name="**/*.jar"/>
+        </fileset>
+    </path>
+
+    <target name="compile-tests" depends="build">
+        <mkdir dir="${test.compiled.classes}"/>
+        <javac srcdir="${test.classes}" destdir="${test.compiled.classes}">
+            <classpath refid="test.classpath"/>
+        </javac>
+<!--        <mkdir dir="build/classes/org/jdesktop/wonderland/modules/subsnapshots/client/resources"/>
+        <copy todir="build/classes/org/jdesktop/wonderland/modules/subsnapshots/client/resources">
+            <fileset dir="src/classes/org/jdesktop/wonderland/modules/subsnapshots/client/resources/" />
+        </copy>-->
+    </target>
+
+    <target name="test" depends="compile-tests">
+        <junit fork="yes" haltonfailure="yes">
+            <formatter type="plain" usefile="false" />
+            <classpath refid="test.classpath" />
+            <batchtest>
+                <fileset dir="${test.compiled.classes}" includes="**/*Test.class" />
+            </batchtest>
+        </junit>
+    </target>
+
 </project>
