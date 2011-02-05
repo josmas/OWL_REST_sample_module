@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  *
  * @author jos
  */
-class RestGateway {
+public class RestGateway {
 
     private static final Logger LOGGER =
             Logger.getLogger(RestGateway.class.getName());

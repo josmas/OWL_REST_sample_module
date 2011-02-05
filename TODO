@@ -2,10 +2,13 @@ Tasks
 -----
 X Create new cell from the cell tutorial with a listener for mouse.
 Create a content menu to register instead of the mouse click.
+    - Gather the user information to send with the register action
 X Add REST calls (old code with GET and POST).
-Connect the click with a POST Action
+X Connect the click with a POST Action
 Refactor REST calls and try to separate them (a component?).
 Add UPDATE and DELETE support.
+
+Notify the user if there is a problem with the POST operation : HUD?
 
 Tests
 -----
