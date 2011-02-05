@@ -28,13 +28,11 @@ public class RESTURLGateway implements RESTGateway {
      * @param remoteRestURL the URL and data to be accessed.
      * @return String wrapping the xml information read from the remote server.
      */
-    public  String restGETConnection(String remoteRestURL) {
+    public String restGETConnection(String remoteRestURL) throws MalformedURLException, IOException {
 
         URL railsAppURL;
         StringBuffer xmlReply = new StringBuffer("");
 
-        try {
-            //Open a connection and read from the buffer
             railsAppURL = new URL(remoteRestURL);
             URLConnection railsAppCon = railsAppURL.openConnection();
             BufferedReader xmlReplyReader = new BufferedReader(
@@ -48,23 +46,17 @@ public class RESTURLGateway implements RESTGateway {
 
             xmlReplyReader.close();
 
-        } catch (MalformedURLException mue) { //TODO think about how to handle exceptions
-            LOGGER.warning("Error : " + mue.getMessage());
-        } catch (IOException ioe) {
-            LOGGER.warning("Error : " + ioe.getMessage());
-        }
-
         return xmlReply.toString();
     }
 
-        /**
+     /**
      * A POST REST request is sent to the remote server, to insert data in the database.
      * @param remoteRestURL
      * @param xmlMessage xml snippet to be inserted in the remote database
      * @return String wrapping the xml of the new inserted item
      * @throws Exception see TODO
      */
-    public String restPOSTConnection(String remoteRestURL, String xmlMessage) throws Exception {
+    public String restPOSTConnection(String remoteRestURL, String xmlMessage) throws MalformedURLException, IOException {
 
         //TODO catch the exception; Could read the HTTP response code, that would be the return type.
         URL railsApp = new URL(remoteRestURL);
@@ -105,8 +97,8 @@ public class RESTURLGateway implements RESTGateway {
         return userString.toString();
     }
 
-    public  String createURLToPostTo() {
-        return BUNDLE.getString("URL_To_Connect_To") + "users.xml";
+    public  String createURLToPostTo(String target) {
+        return BUNDLE.getString("URL_To_Connect_To") + target;
     }
 
 }

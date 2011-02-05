@@ -96,7 +96,7 @@ public class RESTSampleCell extends Cell {
             //Can update shape change to some kind of 'Registering' animation to use as feedback?
             renderer.updateShape();
             RESTURLGateway gateway = new RESTURLGateway();
-            String URLToPostTO = gateway.createURLToPostTo();
+            String URLToPostTO = gateway.createURLToPostTo("users.xml");
             String userString = gateway.createMessageToPost();
             try {
                 gateway.restPOSTConnection(URLToPostTO, userString.toString());

@@ -18,9 +18,9 @@ for that particular user, right? I'd say so.
 
 Tests
 -----
-Mock the connection to the web server and skip integration tests.
-    - Add an interface for the REST gateway
-    - Use a mock in the tests from that interface
+XMock the connection to the web server and skip integration tests.
+    XAdd an interface for the REST gateway
+    XUse a mock in the tests from that interface
 
 
 //Design: Group all the REST specific code in a separate class so that it can
