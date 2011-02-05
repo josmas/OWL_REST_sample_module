@@ -1,22 +1,38 @@
 Tasks
 -----
 X Create new cell from the cell tutorial with a listener for mouse.
-Create a content menu to register instead of the mouse click.
-    - Gather the user information to send with the register action
+X Create a content menu to register instead of the mouse click.
+    X Gather the user information to send with the register action
 X Add REST calls (old code with GET and POST).
 X Connect the click with a POST Action
 Refactor REST calls and try to separate them (a component?).
 Add UPDATE and DELETE support.
-
+X Read the URL to post to from a properties file
+X Add a resources package with a bundler
+X Add 'register' string to the bundle
 Notify the user if there is a problem with the POST operation : HUD?
+
+How to display info to the user? A texture change seems like the way to go? But
+will need to update all clients -- needs messages! Not really, only want feedback
+for that particular user, right? I'd say so.
 
 Tests
 -----
 Mock the connection to the web server and skip integration tests.
+    - Add an interface for the REST gateway
+    - Use a mock in the tests from that interface
 
 
 //Design: Group all the REST specific code in a separate class so that it can
 be testable out of the world.
 
+The URL should not go in the bundle but I don't have a 'big enough' need for a
+properties file right now, so it's ok there.
+
 //Idea for the component: In the properties panel we can attach the strings to
 send or return, depending on the operation (GET, POST, UPDATE, DELETE).
+Not sure this is the way to go anymore. It might be a matter of packing it all
+up in a jar and use it as a dependency?
+Or even creating a component but no need for properties, just use the classes. But
+in this case... how is this a component? looks more like a service (should it go
+into core?).

@@ -39,6 +39,13 @@ to change your settings for Netbeans.
 
 Link to the tutorial: http://faithhold.dyndns.org:8080/JSPWiki/Wiki.jsp?page=Developing%20a%20New%20Cell
 
+-----------------------
+The external webservice
+-----------------------
+The URL at which the webservice is running has to be configured in the Bundle file.
+It should not really be there but I don't have a 'big enough' need for a properties file right now,
+so it's ok there for now.
+
 -----------------------------------------
 Cleaning up git references after cloning
 -----------------------------------------

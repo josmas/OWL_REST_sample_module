@@ -26,6 +26,9 @@
                 <clientjar name="${module.name}-client" basedir="${build.classes.dir}">
                     <include name="${module.src}/client/**"/>
                     <include name="${module.src}/common/**"/>
+                    <fileset dir="${current.dir}/src/classes">
+                        <include name="${module.src}/client/**/*.properties"/>
+                    </fileset>
                 </clientjar> 
 	    </client>
                 
@@ -54,9 +57,9 @@
         <fileset dir="${test.lib}">
             <include name="**/*.jar"/>
         </fileset>
-        <fileset dir="${wonderland.dir}/core/build/lib">
+       <!-- <fileset dir="${wonderland.dir}/core/build/lib">
             <include name="**/*.jar"/>
-        </fileset>
+        </fileset>-->
     </path>
 
     <target name="compile-tests" depends="build">
@@ -64,10 +67,9 @@
         <javac srcdir="${test.classes}" destdir="${test.compiled.classes}">
             <classpath refid="test.classpath"/>
         </javac>
-<!--        <mkdir dir="build/classes/org/jdesktop/wonderland/modules/subsnapshots/client/resources"/>
-        <copy todir="build/classes/org/jdesktop/wonderland/modules/subsnapshots/client/resources">
-            <fileset dir="src/classes/org/jdesktop/wonderland/modules/subsnapshots/client/resources/" />
-        </copy>-->
+        <copy todir="build/classes/org/jdesktop/wonderland/modules/restsamplemodule/client">
+            <fileset dir="src/classes/org/jdesktop/wonderland/modules/restsamplemodule/client/" />
+        </copy>
     </target>
 
     <target name="test" depends="compile-tests">
