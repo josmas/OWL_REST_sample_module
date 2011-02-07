@@ -46,15 +46,24 @@ The URL at which the webservice is running has to be configured in the Bundle fi
 It should not really be there but I don't have a 'big enough' need for a properties file right now,
 so it's ok there for now.
 
+------------------------------
+The internal webservice Client
+------------------------------
+This module was conceived to try and demonstrate the facilities that Open Wonderland provides to connect to
+external resources. The REST realted client code is the simplest solution I could find so it does not
+interfere with the understanding (and simplicity) of the module.
+
+In the following blog post, this code is categorised as 'Raw Data Communication':
+http://www.jroller.com/Solomon/entry/java_restful_clients_and_jax
+A lot more can be done with the code, and as the post suggests, JAXB2 could be a great alternative in this 
+case because it is already used in Wonderland. Feel free to expand the example as you think fits.
+
 -----------------------------------------
 Cleaning up git references after cloning
 -----------------------------------------
 If you have cloned this project, you will want to clean up the remote references to the original git project.
-To do so just delete the .git folder. You can also delete the .gitigore file if you are not going to be using git,
-and the file at src/classes/.only_here_for_git_delete_me which is only there cause git does not keep track of empty
-folders.
-
-After cleaning these files up, you can initialise your own git repo if you want to do so (git init).
+To do so just delete the .git folder. You can also delete the .gitigore file if you are not going to be using 
+git. After cleaning these files up, you can initialise your own git repo if you want to do so (git init).
 
 
 Jos (Feb 2011)

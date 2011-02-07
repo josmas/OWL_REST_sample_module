@@ -10,11 +10,13 @@ Add UPDATE and DELETE support.
 X Read the URL to post to from a properties file
 X Add a resources package with a bundler
 X Add 'register' string to the bundle
-Notify the user if there is a problem with the POST operation : HUD?
+Notify the user if there is a problem with the POST operation : HUD? -- 
+Last point is too complex for a little example, but add as a comment!
 
 How to display info to the user? A texture change seems like the way to go? But
 will need to update all clients -- needs messages! Not really, only want feedback
 for that particular user, right? I'd say so.
+
 
 Tests
 -----
@@ -28,6 +30,10 @@ be testable out of the world.
 
 The URL should not go in the bundle but I don't have a 'big enough' need for a
 properties file right now, so it's ok there.
+
+Decision: I am going to keep this example as easy as possible: The POST call wil
+just simply write to console.
+
 
 //Idea for the component: In the properties panel we can attach the strings to
 send or return, depending on the operation (GET, POST, UPDATE, DELETE).
