@@ -91,18 +91,19 @@ public class RESTSampleCell extends Cell {
 
     class MenuItemListener implements ContextMenuActionListener {
         public void actionPerformed(ContextMenuItemEvent event) {
-            //TODO this instead of changing shape, will have to call the post action
+            //NOTE this instead of changing shape, we could launch some kind of
+            //'Registering' animation to use as feedback or change the texture
             shapeType = (shapeType.equals("BOX") == true) ? "SPHERE" : "BOX";
-            //Can update shape change to some kind of 'Registering' animation to use as feedback?
             renderer.updateShape();
             RESTURLGateway gateway = new RESTURLGateway();
             String URLToPostTO = gateway.createURLToPostTo("users.xml");
             String userString = gateway.createMessageToPost();
             try {
                 gateway.restPOSTConnection(URLToPostTO, userString.toString());
-            } catch (Exception ex) { //TODO if an exception happens, have to tell the user!
-                //TODO could be great to have a Call to EZScript create HUD with a message (or can it be done
-                //with huddialog?)
+                //NOTE for this sample, we can do a GET call and print out to console.
+                System.out.println(gateway.restGETConnection(URLToPostTO));
+            } catch (Exception ex) {
+                //NOTE if an exception happens, you have to let the user know! (out of scope for this sample)
                 Logger.getLogger(RESTSampleCell.class.getName()).log(Level.SEVERE, null, ex);
             }
         }

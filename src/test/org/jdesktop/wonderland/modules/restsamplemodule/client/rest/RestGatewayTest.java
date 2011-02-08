@@ -12,7 +12,7 @@ import org.junit.Test;
 public class RestGatewayTest {
     private RESTGateway mockedGateway;
     RESTURLGateway gateway;
-    private String getURL = "http://173.45.228.42:3000/users.xml";
+    private String getURL = "http://localhost:3000/users.xml";
     
     @Before
     public void setUp() {
@@ -50,7 +50,7 @@ public class RestGatewayTest {
 
     @Test
     public void testPOSTConnection() throws Exception {
-        StringBuffer userString = new StringBuffer("");
+        StringBuilder userString = new StringBuilder("");
         userString.append("<user>");
         userString.append("<first-name>Josmas</first-name>");
         userString.append("<last-name>mola mucho mas</last-name>");

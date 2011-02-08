@@ -2,8 +2,11 @@
 -- REST module sample --
 ------------------------
 
-This is sample Open Wonderland module that displays a cell. On click it will register the
-user against an external webservice that follows a REST interface.
+This is sample Open Wonderland module that displays a cell. On right-click it displays
+a 'register' option that when selected, it registers the user against an external
+webservice that follows a REST interface.
+
+Please note that you will have to provide that webservice!
 
 ----------------------------------------------
 Classpaths and expected structure for Netbeans
@@ -37,7 +40,7 @@ If you drop the module in that last directory (or a similar strucutre but with y
 then all the classpaths should be ready to go. If not, follow the instructions in the tutorial
 to change your settings for Netbeans.
 
-Link to the tutorial: http://faithhold.dyndns.org:8080/JSPWiki/Wiki.jsp?page=Developing%20a%20New%20Cell
+Link to the tutorial: http://faithhold.dyndns.org:8080/JSPWiki/Wiki.jsp?page=REST%20client%20sample%20module
 
 -----------------------
 The external webservice
@@ -65,5 +68,10 @@ If you have cloned this project, you will want to clean up the remote references
 To do so just delete the .git folder. You can also delete the .gitigore file if you are not going to be using 
 git. After cleaning these files up, you can initialise your own git repo if you want to do so (git init).
 
+
+____
+TODO
+----
+Testing is unfinished, but the module should deploy normally and connect to the service provided (by you!)
 
 Jos (Feb 2011)
