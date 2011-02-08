@@ -2,7 +2,7 @@
 -- REST module sample --
 ------------------------
 
-This is sample Open Wonderland module that displays a cell. On right-click it displays
+This is a sample Open Wonderland module that displays a cell. On right-click it displays
 a 'register' option that when selected, it registers the user against an external
 webservice that follows a REST interface.
 
